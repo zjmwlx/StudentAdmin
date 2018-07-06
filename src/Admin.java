@@ -15,6 +15,7 @@ public class Admin {//用来管理学生
 		}else{
 			students[i]  =student;
 		}
+		/**遍历数组。输出学生*/
 		for(int j = 0;j<students.length;j++){
 		
 			System.out.println(students[j]);
