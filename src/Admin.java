@@ -17,7 +17,7 @@ public class Admin {//用来管理学生
 		}
 		for(int j = 0;j<students.length;j++){
 		
-			System.out.println(students[i]);
+			System.out.println(students[j]);
 		}
 		}
 	
@@ -28,8 +28,6 @@ public class Admin {//用来管理学生
 				return i;
 			}
 		}
-		return -1;
-		
+		return -1;	
 	}
-
 }
