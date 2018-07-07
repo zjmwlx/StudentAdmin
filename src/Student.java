@@ -68,6 +68,8 @@ public class Student {
 	}
 	@Override
 	public String toString() {
+		this.setSum();
+		this.setAvg();
 		 String Str = "\t" + getNo() + "\t" + getName() + "\t" + getAge() + "\t"
 				+ getJava() + "\t" + getC__() + "\t" + getHtml() + "\t" + getSql()
 				+ "\t" + getSum() + "\t" + getAvg();
