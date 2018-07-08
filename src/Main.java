@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Text {// 主程序
+public class Main {// 主程序
 
 	public static void main(String[] args) {
 		/** 声明Scanner */
@@ -19,14 +19,15 @@ public class Text {// 主程序
 		while (true) {
 			/** 打印提示信息，让用户选择要执行的操作 */
 			System.out.println("***你要执行的操作***\n" + ">10:添加一个学生\n" + ">11:查找以学生\n" + ">12:根据编号更新学生的基本信息\n"
-					+ ">13:根据编号删除学生\n" + ">14:根据编号输入学生的各门成绩\n" + ">15:根据某门成绩进行排序\n" + ">16:根据总分进行排序\n" + ">17:根据平均分进行排序\n" +">99:退出系统");
+					+ ">13:根据编号删除学生\n" + ">14:根据某门成绩进行排序\n" + ">15:根据总分进行排序\n" + ">99:退出系统");
 			num = scanner.nextInt();
 			/** 判断用户输入是否有误 */
 			if ((num != 10) && (num != 11) && (num != 12) && (num != 13) && (num != 14) && (num != 15) && (num != 16)
-					&& (num != 99)&&(num!=17)) {
+					&& (num != 99) && (num != 17)) {
 				System.out.println("请输入正确的操作编号！");
-			}else{
+			} else {
 				switch (num) {
+				/* 添加学生 */
 				case 10:
 					System.out.println("请输入要添加的学生的姓名：");
 					String name = scanner.next();
@@ -34,55 +35,63 @@ public class Text {// 主程序
 					int age = scanner.nextInt();
 					admin.AddStudent(name, age, students);
 					break;
+				/* 查找学生 */
 				case 11:
 					System.out.println("请输入要查找学生的编号：");
 					int findNo = scanner.nextInt();
-					if (admin.find(findNo,students)!=null) {
+					if (admin.find(findNo, students) != null) {
 						admin.printTitle();
-						System.out.println(admin.find(findNo,students));
-					}else {
+						System.out.println(admin.find(findNo, students));
+					} else {
 						System.out.println("没有查询到该编号的同学，请检查编号是否正确！");
 					}
 					break;
+				/* 更新学生信息 */
 				case 12:
 					System.out.println("请输入要更新学生的编号：");
 					int changeNo = scanner.nextInt();
-					if(admin.find(changeNo, students)!=null){
-						admin .change(changeNo,students);
+					if (admin.find(changeNo, students) != null) {
+						admin.change(changeNo, students);
 						admin.print(students);
-					}else{
+					} else {
 						System.out.println("没有查询到该编号的同学，请检查编号是否正确！");
 					}
 
 					break;
+				/* 删除学生 */
 				case 13:
-					while(true){
+					while (true) {
 						System.out.println("请输入要删除的学生编号：");
 						int deleteNo = scanner.nextInt();
-						if (0<=deleteNo&&deleteNo<students.length) {
-							if (admin.find(deleteNo, students)!=null) {
-								admin.delete(deleteNo,students);
+						if (0 <= deleteNo && deleteNo < students.length) {
+							if (admin.find(deleteNo, students) != null) {
+								admin.delete(deleteNo, students);
 								admin.print(students);
 								break;
-							}else {
+							} else {
 								System.out.println("没有查询到该编号的同学，请检查编号是否正确！");
 							}
-						}else {
+						} else {
 							System.out.println("请输入正确的学生编号！");
 						}
 					}
-					
-
+					/** 根据某们课程的成绩排序 */
 				case 14:
-					System.out.println("输入学生的各门成绩");
-					break;
+					System.out.println("请选择要排序的课程：\n*1  java\t *2  C#\t *3  HTML\t *4  SQL");
+					while (true) {
+						int sortNo = scanner.nextInt();
+						if (1 <= sortNo && sortNo <= 4) {
+							admin.sort(sortNo, students);
+							break;
+						} else {
+							System.out.println("输入有误，请重新输入：");
+						}
+					}
+
 				case 15:
-					System.out.println("根据某门成绩进行排序");
-					break;
-				case 16:
 					System.out.println("根据总分进行排序");
 					break;
-				case 17:
+				case 16:
 					System.out.println("根据平均分进行排序");
 					break;
 				case 99:
