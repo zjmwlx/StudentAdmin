@@ -53,11 +53,25 @@ public class Text {// 主程序
 					}else{
 						System.out.println("没有查询到该编号的同学，请检查编号是否正确！");
 					}
-					
+
 					break;
 				case 13:
-					System.out.println("删除学生");
-					break;
+					while(true){
+						System.out.println("请输入要删除的学生编号：");
+						int deleteNo = scanner.nextInt();
+						if (0<=deleteNo&&deleteNo<students.length) {
+							if (admin.find(deleteNo, students)!=null) {
+								admin.delete(deleteNo,students);
+								admin.print(students);
+								break;
+							}else {
+								System.out.println("没有查询到该编号的同学，请检查编号是否正确！");
+							}
+						}else {
+							System.out.println("请输入正确的学生编号！");
+						}
+					}
+					
 
 				case 14:
 					System.out.println("输入学生的各门成绩");
