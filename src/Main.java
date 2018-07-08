@@ -18,8 +18,8 @@ public class Main {// 主程序
 		Student[] students = new Student[total];
 		while (true) {
 			/** 打印提示信息，让用户选择要执行的操作 */
-			System.out.println("***你要执行的操作***\n" + ">10:添加一个学生\n" + ">11:查找以学生\n" + ">12:根据编号更新学生的基本信息\n"
-					+ ">13:根据编号删除学生\n" + ">14:根据某门成绩进行排序\n" + ">15:根据总分进行排序\n" + ">99:退出系统");
+			System.out.println("***你要执行的操作***\n" + ">10:添加一个学生\n" + ">11:根据编号查找学生\n" + ">12:根据编号更新学生的基本信息\n"
+					+ ">13:根据编号删除学生\n" + ">14:根据某门成绩进行排序\n" + ">15:根据总分进行排序\n" + ">16:根据编号录入学生各科成绩\n" + ">99:退出系统");
 			num = scanner.nextInt();
 			/** 判断用户输入是否有误 */
 			if ((num != 10) && (num != 11) && (num != 12) && (num != 13) && (num != 14) && (num != 15) && (num != 16)
@@ -87,12 +87,26 @@ public class Main {// 主程序
 							System.out.println("输入有误，请重新输入：");
 						}
 					}
-
+					break;
+					/** 根据总成绩排序 */
 				case 15:
-					System.out.println("根据总分进行排序");
+					admin.sumSort(students);
+
 					break;
 				case 16:
-					System.out.println("根据平均分进行排序");
+					System.out.println("请输入学生编号：");
+					int inputNo = scanner.nextInt();
+					if(0<=inputNo&&inputNo<students.length){
+						if (students[inputNo] != null) {
+							admin.input(inputNo, students);
+						} else {
+							System.out.println("没有该同学，请检查输入的编号是否正确！");
+						}
+					}else {
+						System.out.println("没有该同学，请检查输入的编号是否正确！");
+					}
+					
+
 					break;
 				case 99:
 					System.out.println("退出系统");

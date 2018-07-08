@@ -197,4 +197,32 @@ public class Admin {// 用来管理学生
 
 	}
 
+	public void sumSort(Student[] students) {
+		for (int i = 0; i <= students.length - 1; i++) {
+			for (int j = i + 1; j < students.length; j++) {
+				if (students[i].getSum() < students[j].getSum()) {
+					Student a = students[i];
+					students[i] = students[j];
+					students[j] = a;
+				}
+			}
+		}
+		this.print(students);
+
+	}
+
+	/** 输入各科成绩 */
+
+	public void input(int inputNo, Student[] students) {
+		System.out.println("请输入该同学的java成绩：");
+		students[inputNo].setJava(scanner.nextInt());
+		System.out.println("请输入该同学的C#成绩：");
+		students[inputNo].setC__(scanner.nextInt());
+		System.out.println("请输入该同学的HTML成绩：");
+		students[inputNo].setHtml(scanner.nextInt());
+		System.out.println("请输入该同学的SQL成绩：");
+		students[inputNo].setSql(scanner.nextInt());
+		this.print(students);
+	}
+
 }
