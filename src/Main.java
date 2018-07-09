@@ -75,6 +75,7 @@ public class Main {// 主程序
 							System.out.println("请输入正确的学生编号！");
 						}
 					}
+					break;
 					/** 根据某们课程的成绩排序 */
 				case 14:
 					System.out.println("请选择要排序的课程：\n*1  java\t *2  C#\t *3  HTML\t *4  SQL");

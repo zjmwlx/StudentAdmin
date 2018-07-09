@@ -77,7 +77,7 @@ public class Admin {// 用来管理学生
 				printTitle();
 				System.out.println(changeStu);
 				break;
-			// 更该学生年龄
+				// 更该学生年龄
 			case 2:
 				System.out.println("请输入年龄：");
 				changeStu.setAge(scanner.nextInt());
@@ -124,7 +124,8 @@ public class Admin {// 用来管理学生
 		System.out.println("确定要删除该学生信息吗？\n*1  是\t*0  否");
 		// 让用户孺人是否真的要删除，以免误操作
 		if (scanner.nextInt() == 1) {
-			// 判断要删除的是否是最后一位学生，
+			students[deleteNo]=null;
+			/*// 判断要删除的是否是最后一位学生，
 			if (deleteNo != students.length - 1) {
 				for (int i = deleteNo; i < students.length - 1; i++) {
 					students[i] = students[i + 1];
@@ -132,9 +133,8 @@ public class Admin {// 用来管理学生
 				// students[deleteNo]=null;
 			} else {
 				students[deleteNo] = null;
-			}
+			}*/
 		}
-
 	}
 
 	/** 根据某们课程成绩进行排序 */
@@ -153,7 +153,7 @@ public class Admin {// 用来管理学生
 			}
 			this.print(students);
 			break;
-		// 根据C#排序
+			// 根据C#排序
 		case 2:
 			for (int i = 0; i <= students.length - 1; i++) {
 				for (int j = i + 1; j < students.length; j++) {
@@ -166,7 +166,7 @@ public class Admin {// 用来管理学生
 			}
 			this.print(students);
 			break;
-		// 根据HTML排序
+			// 根据HTML排序
 		case 3:
 			for (int i = 0; i <= students.length - 1; i++) {
 				for (int j = i + 1; j < students.length; j++) {
@@ -179,7 +179,7 @@ public class Admin {// 用来管理学生
 			}
 			this.print(students);
 			break;
-		// 根据SQL排序
+			// 根据SQL排序
 		case 4:
 			for (int i = 0; i <= students.length - 1; i++) {
 				for (int j = i + 1; j < students.length; j++) {
