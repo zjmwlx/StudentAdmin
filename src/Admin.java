@@ -124,16 +124,13 @@ public class Admin {// 用来管理学生
 		System.out.println("确定要删除该学生信息吗？\n*1  是\t*0  否");
 		// 让用户孺人是否真的要删除，以免误操作
 		if (scanner.nextInt() == 1) {
-			students[deleteNo]=null;
-			/*// 判断要删除的是否是最后一位学生，
-			if (deleteNo != students.length - 1) {
-				for (int i = deleteNo; i < students.length - 1; i++) {
-					students[i] = students[i + 1];
-				}
-				// students[deleteNo]=null;
-			} else {
-				students[deleteNo] = null;
-			}*/
+			students[deleteNo] = null;
+			/*
+			 * // 判断要删除的是否是最后一位学生， if (deleteNo != students.length - 1) { for
+			 * (int i = deleteNo; i < students.length - 1; i++) { students[i] =
+			 * students[i + 1]; } // students[deleteNo]=null; } else {
+			 * students[deleteNo] = null; }
+			 */
 		}
 	}
 
@@ -144,10 +141,12 @@ public class Admin {// 用来管理学生
 		case 1:
 			for (int i = 0; i <= students.length - 1; i++) {
 				for (int j = i + 1; j < students.length; j++) {
-					if (students[i].getJava() < students[j].getJava()) {
-						Student a = students[i];
-						students[i] = students[j];
-						students[j] = a;
+					if (students[i] != null && students[j] != null) {
+						if (students[i].getJava() < students[j].getJava()) {
+							Student a = students[i];
+							students[i] = students[j];
+							students[j] = a;
+						}
 					}
 				}
 			}
@@ -157,10 +156,12 @@ public class Admin {// 用来管理学生
 		case 2:
 			for (int i = 0; i <= students.length - 1; i++) {
 				for (int j = i + 1; j < students.length; j++) {
-					if (students[i].getC__() < students[j].getC__()) {
-						Student a = students[i];
-						students[i] = students[j];
-						students[j] = a;
+					if (students[i] != null && students[j] != null) {
+						if (students[i].getC__() < students[j].getC__()) {
+							Student a = students[i];
+							students[i] = students[j];
+							students[j] = a;
+						}
 					}
 				}
 			}
@@ -170,10 +171,12 @@ public class Admin {// 用来管理学生
 		case 3:
 			for (int i = 0; i <= students.length - 1; i++) {
 				for (int j = i + 1; j < students.length; j++) {
-					if (students[i].getHtml() < students[j].getHtml()) {
-						Student a = students[i];
-						students[i] = students[j];
-						students[j] = a;
+					if (students[i] != null && students[j] != null) {
+						if (students[i].getHtml() < students[j].getHtml()) {
+							Student a = students[i];
+							students[i] = students[j];
+							students[j] = a;
+						}
 					}
 				}
 			}
@@ -183,10 +186,12 @@ public class Admin {// 用来管理学生
 		case 4:
 			for (int i = 0; i <= students.length - 1; i++) {
 				for (int j = i + 1; j < students.length; j++) {
-					if (students[i].getSql() < students[j].getSql()) {
-						Student a = students[i];
-						students[i] = students[j];
-						students[j] = a;
+					if (students[i] != null && students[j] != null) {
+						if (students[i].getSql() < students[j].getSql()) {
+							Student a = students[i];
+							students[i] = students[j];
+							students[j] = a;
+						}
 					}
 				}
 			}
@@ -200,10 +205,12 @@ public class Admin {// 用来管理学生
 	public void sumSort(Student[] students) {
 		for (int i = 0; i <= students.length - 1; i++) {
 			for (int j = i + 1; j < students.length; j++) {
-				if (students[i].getSum() < students[j].getSum()) {
-					Student a = students[i];
-					students[i] = students[j];
-					students[j] = a;
+				if (students[i] != null && students[j] != null) {
+					if (students[i].getSum() < students[j].getSum()) {
+						Student a = students[i];
+						students[i] = students[j];
+						students[j] = a;
+					}
 				}
 			}
 		}

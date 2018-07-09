@@ -76,7 +76,7 @@ public class Main {// 主程序
 						}
 					}
 					break;
-					/** 根据某们课程的成绩排序 */
+				/** 根据某们课程的成绩排序 */
 				case 14:
 					System.out.println("请选择要排序的课程：\n*1  java\t *2  C#\t *3  HTML\t *4  SQL");
 					while (true) {
@@ -89,7 +89,7 @@ public class Main {// 主程序
 						}
 					}
 					break;
-					/** 根据总成绩排序 */
+				/** 根据总成绩排序 */
 				case 15:
 					admin.sumSort(students);
 
@@ -97,24 +97,23 @@ public class Main {// 主程序
 				case 16:
 					System.out.println("请输入学生编号：");
 					int inputNo = scanner.nextInt();
-					if(0<=inputNo&&inputNo<students.length){
+					if (0 <= inputNo && inputNo < students.length) {
 						if (students[inputNo] != null) {
 							admin.input(inputNo, students);
 						} else {
 							System.out.println("没有该同学，请检查输入的编号是否正确！");
 						}
-					}else {
+					} else {
 						System.out.println("没有该同学，请检查输入的编号是否正确！");
 					}
-					
-
 					break;
 				case 99:
-					System.out.println("退出系统");
-					break;
-
-				default:
-					break;
+					System.out.println("确定要退出系统？\n*1确定\t*2取消");
+					if (scanner.nextInt() == 1) {
+						System.exit(0);
+					} else {
+						break;
+					}
 				}
 			}
 
